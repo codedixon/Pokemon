@@ -1,0 +1,36 @@
+﻿@model Poke.Models.Pokemon
+
+@{
+    ViewData["Title"] = "PokeView";
+    var pokelist = ViewData["pokemon"] as List<Pokemon>;
+}
+
+<h1>PokeView</h1>
+
+<div>
+    <h4>Pokemon</h4>
+    <table style="width:100%">
+        <tr>
+            <th>PokeDex Number</th>
+            <th>name</th>
+            <th>Sprite</th>
+            <th>Img</th>
+        </tr>
+        @foreach (var poke in pokelist)
+        {
+
+        <tr>
+            <td>@poke.id</td>
+            <td>@poke.name</td>
+            <td><img src ="@poke.sprites.front_default"></td>
+            <td>@poke.stats[0].base_stat</td>
+        </tr>
+        }
+    </table>
+    <hr />
+   
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
