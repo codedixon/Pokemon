@@ -20,9 +20,9 @@
         {
 
         <tr>
-            <td>@poke.id</td>
-            <td><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">@poke.name</a></td>
-            <td><img src ="@poke.sprites.front_default"></td>
+            <td><a class="nav-link text-dark" asp-area="" asp-controller="Poke" asp-action="Details" asp-route-id="@poke.id">@poke.id</a></td>
+            <td><a class="nav-link text-dark" asp-area="" asp-controller="Poke" asp-action="Details" asp-route-id="@poke.id">@poke.name</a></td>
+            <td><a class="nav-link text-dark" asp-area="" asp-controller="Poke" asp-action="Details" asp-route-id="@poke.id"><img src="@poke.sprites.front_default"></a></td>
             <td>@poke.stats[0].base_stat</td>
         </tr>
         }
