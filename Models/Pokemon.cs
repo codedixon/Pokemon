@@ -324,17 +324,17 @@ namespace Poke.Models
         public string url { get; set; }
     }
 
-    public class Move
-    {
-        public Move1 move { get; set; }
-        public Version_Group_Details[] version_group_details { get; set; }
-    }
+    //public class Move
+    //{
+    //    public Move1 move { get; set; }
+    //    public Version_Group_Details[] version_group_details { get; set; }
+    //}
 
-    public class Move1
-    {
-        public string name { get; set; }
-        public string url { get; set; }
-    }
+    //public class Move1
+    //{
+    //    public string name { get; set; }
+    //    public string url { get; set; }
+    //}
 
     public class Version_Group_Details
     {
