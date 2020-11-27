@@ -78,9 +78,10 @@
                     <th>Name</th>
                 </tr>
                 @foreach (var move in pokemon.moves)
-                   
+
                 {
-                int moveid = Int32.Parse(@move.move.url.TrimEnd('/').Substring(@move.move.url.Length - 3, 2));
+                    string[] moveurl = move.move.url.Split('/');
+                    int moveid = Int32.Parse(moveurl[moveurl.Length - 2]);
                 <tr>
                     <td><a class="nav-link text-dark" asp-area="" asp-controller="Move" asp-action="Details" asp-route-id="@moveid">@moveid</a></td>
                     <td><a class="nav-link text-dark" asp-area="" asp-controller="Move" asp-action="Details" asp-route-id="@moveid">@move.move.name</a></td>
