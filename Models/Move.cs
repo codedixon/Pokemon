@@ -39,13 +39,13 @@ namespace Poke.Models
         public string name { get; set; }
         public Name[] names { get; set; }
         public object[] past_values { get; set; }
-        public int power { get; set; }
+        public int? power { get; set; }
         public int pp { get; set; }
         public int priority { get; set; }
         public object[] stat_changes { get; set; }
         public Super_Contest_Effect super_contest_effect { get; set; }
         public Target target { get; set; }
-        public Type type { get; set; }
+        public Type1 type { get; set; }
 
         internal static Moves GetMoves(int id)
         {
