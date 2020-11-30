@@ -17,3 +17,925 @@
 
   
 </div>
+
+<body class="">
+    <iframe src="https://z.moatads.com/hd09824092/iframe.html#header=1" width="0" height="0" style="display: none; width: 0px; height: 0px;"></iframe>
+    <script type="text/javascript">
+	var viewport_meta = document.getElementById('viewport-meta');
+	var viewport_timer;
+
+	// these body*Class are reused in the lbar mobile menu
+	function bodyAddClass(className){
+		if(document.body) document.body.classList.add(className);
+	}
+	function bodyRemoveClass(className){
+		if(document.body) document.body.className = document.body.className.replace(className,"");
+	}
+
+	function viewport_set() {
+		// Define our viewport meta values
+		var viewports = {
+			default: viewport_meta.getAttribute('content'),
+			mobileL: 'width=device-width,initial-scale=0.75',
+			mobileM: 'width=device-width,initial-scale=0.5',
+			mobileS: 'width=device-width,initial-scale=0.4'
+		};
+
+		// Change the viewport value based on screen.width
+		if(screen.width < 370){
+			viewport_meta.setAttribute('content', viewports.mobileS);
+			bodyAddClass("nav_mobileS");
+			bodyRemoveClass("nav_mobileM");
+			bodyRemoveClass("nav_mobileL");
+		} else if(screen.width < 505){
+			viewport_meta.setAttribute('content', viewports.mobileM);
+			bodyRemoveClass("nav_mobileS");
+			bodyAddClass("nav_mobileM");
+			bodyRemoveClass("nav_mobileL");
+		} else if (screen.width < 760){
+			viewport_meta.setAttribute('content', viewports.mobileL);
+			bodyRemoveClass("nav_mobileS");
+			bodyRemoveClass("nav_mobileM");
+			bodyAddClass("nav_mobileL");
+		} else{
+			viewport_meta.setAttribute('content', viewports.default);
+			bodyRemoveClass("nav_mobileS");
+			bodyRemoveClass("nav_mobileM");
+			bodyRemoveClass("nav_mobileL");
+		}
+	}
+
+	// Set the correct viewport value on page load
+	viewport_set();
+
+	/* attach listener to (delay) set the correct viewport after device orientation change or resize. also onload so the nav_mobile* class gets added to body AFTER <body> has loaded */
+	if(window.addEventListener){
+		window.addEventListener('load', viewport_set);
+		window.addEventListener('resize', function(){
+			clearTimeout(viewport_timer);
+			viewport_timer = setTimeout(viewport_set, 100);
+		})
+	} else{
+		window.attachEvent('onload', viewport_set)
+		window.attachEvent('onresize', function(){
+			clearTimeout(viewport_timer);
+			viewport_timer = setTimeout(viewport_set, 100);
+		})
+	}
+
+    </script>
+
+
+    <header id="header">
+        <div class="banner">
+            <a href="/"><img src="/Banner.jpg" alt="Serebii.net Header" style="height:139px"></a>
+        </div>
+
+        <nav class="quicklinks">
+            <ul>
+                <li><b>Quick Links</b></li>
+                <li><a href="/index2.shtml">Home</a></li>
+                <li><a href="https://forums.serebii.net/" target="blank">Forums</a></li>
+                <li><a href="mailto:webmaster@serebii.net">Contact</a></li>
+                <li><a href="/discord.shtml">Discord</a></li>
+                <li><a href="/pokemon">Pokédex Hub</a></li>
+                <li><a href="/pokemongo/pokemon">GO Pokédex</a></li>
+                <li><a href="/pokedex-swsh">Sword &amp; Shield Pokédex</a></li>
+                <li><a href="/pokearth">Pokéarth</a></li>
+
+                <li class="search">
+                    <form id="searchbox_018410473690156091934:6gahkiyodbi" action="/search.shtml" style="margin:0px;">
+                        <input type="hidden" name="cx" value="018410473690156091934:6gahkiyodbi">
+                        <input type="hidden" name="cof" value="FORID:11">
+                        <input name="q" type="text" size="20" placeholder="Custom Search" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;">
+                        <input type="submit" name="sa" value="Search">
+                        <input name="siteurl" type="hidden" value="www.serebii.net/attackdex-gs/harden.shtml"><input name="ref" type="hidden" value="www.serebii.net/attackdex-gs/"><input name="ss" type="hidden" value="">
+                    </form>
+                    <script type="text/javascript" src="//www.google.com/coop/cse/brand?form=searchbox_018410473690156091934%3A6gahkiyodbi"></script>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <script src="https://consentmanager.mgr.consensu.org/delivery/cmp.php?id=9545&amp;h=https%3A%2F%2Fwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;&amp;__cmpfcc=1&amp;l=&amp;o=1606598326232" type="text/javascript" data-cmp-ab="1" async=""></script>
+    <script src="https://cdn.consentmanager.mgr.consensu.org/delivery/cmp_en.min.js" type="text/javascript" data-cmp-ab="1" async=""></script><iframe name="__cmpLocator" style="display: none;"></iframe><iframe name="__uspapiLocator" style="display: none;"></iframe><iframe name="__tcfapiLocator" style="display: none;"></iframe>
+
+
+
+
+    <div id="wrapper">
+
+        <ul id="tbar_sticky">
+            <li>
+                <a href="#lbar" class="navheader" id="tbar_lbar_open"><img src="/hidden/2019-04/burger.svg"></a>
+            </li>
+            <li>
+                <form id="searchbox_018410473690156091934:6gahkiyodbi" action="/search.shtml" style="margin:0px;">
+                    <input type="hidden" name="cx" value="018410473690156091934:6gahkiyodbi">
+                    <input type="hidden" name="cof" value="FORID:11">
+                    <input name="q" type="search" placeholder="Search Serebii.net...">
+                </form>
+            </li>
+            <li>
+                <a href="#rbar" class="navheader" id="tbar_rbar_open"><img src="/hidden/2019-04/burger.svg"></a>
+            </li>
+        </ul>
+        <div id="tbar_backdrop"></div>
+
+
+        <script type="text/javascript">
+
+function loadMobileLbar(){
+	var tbar_lbar_open=document.getElementById('tbar_lbar_open'),
+		tbar_backdrop=document.getElementById('tbar_backdrop'),
+		lbar=document.getElementById('lbar'),
+		lbarLIs=document.querySelectorAll("#lbar_ul>li .navheader"),
+		lbarLIULs=document.querySelectorAll("#lbar_ul>li>ul");
+
+	/* lbar display/hide */
+	tbar_lbar_open.onclick=function() {
+		if (lbar.className.indexOf("show") > -1){//hide
+			lbar.className = lbar.className.replace("show","");
+			bodyRemoveClass("nav_modal");
+		} else{//show
+			lbar.classList.add("show");
+			bodyAddClass("nav_modal");
+		}
+
+		return false;
+	}
+
+
+	/* background clicked when bar shown */
+	tbar_backdrop.onclick=function() {// if the backdrop is clicked, hide menus
+		lbar.className = lbar.className.replace("show","");
+		rbar.className = rbar.className.replace("show","");
+		bodyRemoveClass("nav_modal");
+		return false;
+	}
+
+	/* handle expand/collapse sub-menus in lbar by attaching click events */
+	for(i=0; i<lbarLIs.length; i++){
+		lbarLIs[i].onclick=function(i) {
+			var elem=this.parentNode.getElementsByTagName("UL")[0];
+			var elemDisp=(elem.className.indexOf("show") === -1)
+
+			// hide all ul, then open one if clicked
+			for(i2=0; i2<lbarLIULs.length; i2++){
+				lbarLIULs[i2].className = lbarLIULs[i2].className.replace("show","");
+			}
+
+			if(elemDisp){
+				elem.classList.add("show");
+			}
+
+			return false;
+		}
+	}
+}
+function loadMobileRbar(){
+	var tbar_rbar_open=document.getElementById('tbar_rbar_open'),
+		rbar=document.getElementById('rbar');
+
+	/* rbar display/hide */
+	tbar_rbar_open.onclick=function() {
+		if (rbar.className.indexOf("show") > -1){//hide
+			rbar.className = rbar.className.replace("show","");
+			bodyRemoveClass("nav_modal");
+		} else{//show
+			rbar.classList.add("show");
+			bodyAddClass("nav_modal");
+		}
+
+		return false;
+	}
+}
+
+loadMobileLbar();
+
+/* attach listener to for rbar events AFTER page loads (because #rbar hasn't loaded at this point in page ) */
+if(window.addEventListener){
+	window.addEventListener('load', loadMobileRbar)
+} else{
+	window.attachEvent('onload', loadMobileRbar)
+}
+        </script>
+
+
+
+        <div id="content">
+            <div class="center" style="margin-top:16px;height:100px"><div id="nn_lb1" data-google-query-id="CKu215SVpu0CFQ6onwodiFAOag"><div id="google_ads_iframe_/6928793/Serebii-LB1_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0" src="https://46728e95aed9c12fca02e47442ffcdf3.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/6928793/Serebii-LB1_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="1" height="1" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="2" style="border: 0px; vertical-align: bottom; width: 728px; height: 90px;" data-load-complete="true"></iframe></div></div><div id="nn_mobile_lb1"></div></div>
+            <main>
+
+                    <a name="details"></a>
+                </p><table class="dextable" align="center">
+                    <tbody>
+                        <tr>
+                            <td class="fooevo" width="33%">
+                                <b>@move.name</b>
+                            </td>
+                            <td class="fooevo" width="66%" colspan="2">
+                                <b>@move.type</b>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="cen">
+                                @move.name<br> かたくなる
+                                <!--<table width="300" cellspacing="0" cellpadding="0">
+                                <tr> <td><b>English</b>: </td><td>Harden</td></tr>
+                                <tr> <td><b>Japanese</b>: </td><td>&#12363;&#12383;&#12367;&#12394;&#12427;</td></tr>
+                                <tr> <td><b>French</b>: </td><td>Armure</td></tr>
+                                <tr> <td><b>German</b>: </td><td>H&#228;rtner</td></tr>
+                                <tr> <td><b>Spanish</b>: </td><td>Fortaleza</td></tr>
+                                <tr> <td><b>Italian</b>: </td><td>Rafforzatore</td></tr>
+                                <tr> <td><b>Korean</b>: </td><td>&#45800;&#45800;&#54644;&#51648;&#44592;</td></tr>
+                                </table>-->
+                            </td>
+                            <td class="cen" colspan="2">
+                                <a href="/attackdex-gs/type/normal.shtml"><img src="/pokedex-bw/type/normal.gif" border="0"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fooevo">
+                                <b>Power Points</b>
+                            </td>
+                            <td class="fooevo">
+                                <b>Base Power</b>
+                            </td>
+                            <td class="fooevo">
+                                <b>Accuracy</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cen">
+                                30
+                            </td>
+                            <td class="cen">
+                                0
+                            </td>
+                            <td class="cen">
+                                100
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="fooleft">Battle Effect:</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="fooinfo">
+                                Raises the user's DEFENSE. Useful when battling physically strong Pokémon.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="fooleft">Secondary Effect:</td>
+                            <td align="center" class="fooevo">Effect Rate:</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="fooinfo">
+                            </td>
+                            <td class="cen">
+                                -- %
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="fooevo">
+                                <b>TM #</b>
+                            </td>
+                            <td class="fooevo">
+                                <b>Speed Priority</b>
+                            </td>
+                            <td class="fooevo">
+                                <b>Pokémon Hit in Battle</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cen">
+                                None
+                            </td>
+                            <td class="cen">0		</td>
+                            <td class="cen">
+                                User
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><a name="level"></a>Pokémon That Learn Harden By Level Up<table class="dextable" align="center">
+                    <tbody>
+                        <tr>
+                            <td align="center" class="fooevo" rowspan="2">
+                                No.
+                            </td>
+                            <td align="center" width="32" class="fooevo" rowspan="2">
+                                Pic
+                            </td>
+                            <td align="center" class="fooevo" rowspan="2">
+                                Name
+                            </td>
+                            <td align="center" class="fooevo" rowspan="2">
+                                Type
+                            </td>
+
+                            <td align="center" class="fooevo" colspan="6" width="10%">
+                                Base Stats
+                            </td>
+                            <td align="center" class="fooevo" colspan="3" width="15%">
+                                Level
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooevo">HP</td>
+                            <td align="center" class="fooevo">Att</td>
+                            <td align="center" class="fooevo">Def</td>
+                            <td align="center" class="fooevo">Sp.Atk</td>
+                            <td align="center" class="fooevo">Sp.Def</td>
+                            <td align="center" class="fooevo">Spd</td>
+                            <td align="center" class="fooevo" width="7.5%">GS</td>
+                            <td align="center" class="fooevo" width="7.5%">C</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#011</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/011.shtml"><img src="/pokearth/sprites/gold/011.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/011.shtml">Metapod</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/bug.shtml"><img src="/pokedex-bw/type/bug.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">20</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">25</td>
+                            <td align="center" class="fooinfo">25</td>
+                            <td align="center" class="fooinfo">30</td>
+                            <td align="center" class="fooinfo">Lv. 1<br>Lv. 7</td>
+                            <td align="center" class="fooinfo">Lv. 1<br>Lv. 7</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#014</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/014.shtml"><img src="/pokearth/sprites/gold/014.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/014.shtml">Kakuna</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/bug.shtml"><img src="/pokedex-bw/type/bug.gif" border="0"></a> <a href="/pokedex-gs/poison.shtml"><img src="/pokedex-bw/type/poison.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">45</td>
+                            <td align="center" class="fooinfo">25</td>
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">25</td>
+                            <td align="center" class="fooinfo">25</td>
+                            <td align="center" class="fooinfo">35</td>
+                            <td align="center" class="fooinfo">Lv. 1<br>Lv. 7</td>
+                            <td align="center" class="fooinfo">Lv. 1<br>Lv. 7</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#074</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/074.shtml"><img src="/pokearth/sprites/gold/074.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/074.shtml">Geodude</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/rock.shtml"><img src="/pokedex-bw/type/rock.gif" border="0"></a> <a href="/pokedex-gs/ground.shtml"><img src="/pokedex-bw/type/ground.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">40</td>
+                            <td align="center" class="fooinfo">80</td>
+                            <td align="center" class="fooinfo">100</td>
+                            <td align="center" class="fooinfo">30</td>
+                            <td align="center" class="fooinfo">30</td>
+                            <td align="center" class="fooinfo">20</td>
+                            <td align="center" class="fooinfo">Lv. 26</td>
+                            <td align="center" class="fooinfo">Lv. 26</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#075</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/075.shtml"><img src="/pokearth/sprites/gold/075.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/075.shtml">Graveler</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/rock.shtml"><img src="/pokedex-bw/type/rock.gif" border="0"></a> <a href="/pokedex-gs/ground.shtml"><img src="/pokedex-bw/type/ground.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">95</td>
+                            <td align="center" class="fooinfo">115</td>
+                            <td align="center" class="fooinfo">45</td>
+                            <td align="center" class="fooinfo">45</td>
+                            <td align="center" class="fooinfo">35</td>
+                            <td align="center" class="fooinfo">Lv. 27</td>
+                            <td align="center" class="fooinfo">Lv. 27</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#076</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/076.shtml"><img src="/pokearth/sprites/gold/076.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/076.shtml">Golem</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/rock.shtml"><img src="/pokedex-bw/type/rock.gif" border="0"></a> <a href="/pokedex-gs/ground.shtml"><img src="/pokedex-bw/type/ground.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">80</td>
+                            <td align="center" class="fooinfo">110</td>
+                            <td align="center" class="fooinfo">130</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">65</td>
+                            <td align="center" class="fooinfo">45</td>
+                            <td align="center" class="fooinfo">Lv. 27</td>
+                            <td align="center" class="fooinfo">Lv. 27</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#088</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/088.shtml"><img src="/pokearth/sprites/gold/088.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/088.shtml">Grimer</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/poison.shtml"><img src="/pokedex-bw/type/poison.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">80</td>
+                            <td align="center" class="fooinfo">80</td>
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">40</td>
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">25</td>
+                            <td align="center" class="fooinfo">Lv. 5</td>
+                            <td align="center" class="fooinfo">Lv. 5</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#089</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/089.shtml"><img src="/pokearth/sprites/gold/089.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/089.shtml">Muk</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/poison.shtml"><img src="/pokedex-bw/type/poison.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">105</td>
+                            <td align="center" class="fooinfo">105</td>
+                            <td align="center" class="fooinfo">75</td>
+                            <td align="center" class="fooinfo">65</td>
+                            <td align="center" class="fooinfo">100</td>
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">Lv. 1<br>Lv. 33</td>
+                            <td align="center" class="fooinfo">Lv. 1<br>Lv. 33</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#095</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/095.shtml"><img src="/pokearth/sprites/gold/095.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/095.shtml">Onix</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/rock.shtml"><img src="/pokedex-bw/type/rock.gif" border="0"></a> <a href="/pokedex-gs/ground.shtml"><img src="/pokedex-bw/type/ground.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">35</td>
+                            <td align="center" class="fooinfo">45</td>
+                            <td align="center" class="fooinfo">160</td>
+                            <td align="center" class="fooinfo">30</td>
+                            <td align="center" class="fooinfo">45</td>
+                            <td align="center" class="fooinfo">70</td>
+                            <td align="center" class="fooinfo">Lv. 23</td>
+                            <td align="center" class="fooinfo">Lv. 23</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#098</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/098.shtml"><img src="/pokearth/sprites/gold/098.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/098.shtml">Krabby</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/water.shtml"><img src="/pokedex-bw/type/water.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">30</td>
+                            <td align="center" class="fooinfo">105</td>
+                            <td align="center" class="fooinfo">90</td>
+                            <td align="center" class="fooinfo">25</td>
+                            <td align="center" class="fooinfo">25</td>
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">Lv. 16</td>
+                            <td align="center" class="fooinfo">Lv. 16</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#099</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/099.shtml"><img src="/pokearth/sprites/gold/099.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/099.shtml">Kingler</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/water.shtml"><img src="/pokedex-bw/type/water.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">130</td>
+                            <td align="center" class="fooinfo">115</td>
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">75</td>
+                            <td align="center" class="fooinfo">Lv. 16</td>
+                            <td align="center" class="fooinfo">Lv. 16</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#120</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/120.shtml"><img src="/pokearth/sprites/gold/120.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/120.shtml">Staryu</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/water.shtml"><img src="/pokedex-bw/type/water.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">30</td>
+                            <td align="center" class="fooinfo">45</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">70</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">85</td>
+                            <td align="center" class="fooinfo">Lv. 1</td>
+                            <td align="center" class="fooinfo">Lv. 1</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#127</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/127.shtml"><img src="/pokearth/sprites/gold/127.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/127.shtml">Pinsir</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/bug.shtml"><img src="/pokedex-bw/type/bug.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">65</td>
+                            <td align="center" class="fooinfo">125</td>
+                            <td align="center" class="fooinfo">100</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">70</td>
+                            <td align="center" class="fooinfo">85</td>
+                            <td align="center" class="fooinfo">Lv. 25</td>
+                            <td align="center" class="fooinfo">Lv. 25</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#140</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/140.shtml"><img src="/pokearth/sprites/gold/140.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/140.shtml">Kabuto</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/rock.shtml"><img src="/pokedex-bw/type/rock.gif" border="0"></a> <a href="/pokedex-gs/water.shtml"><img src="/pokedex-bw/type/water.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">30</td>
+                            <td align="center" class="fooinfo">80</td>
+                            <td align="center" class="fooinfo">90</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">45</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">Lv. 1</td>
+                            <td align="center" class="fooinfo">Lv. 1</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#141</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/141.shtml"><img src="/pokearth/sprites/gold/141.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/141.shtml">Kabutops</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/rock.shtml"><img src="/pokedex-bw/type/rock.gif" border="0"></a> <a href="/pokedex-gs/water.shtml"><img src="/pokedex-bw/type/water.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">60</td>
+                            <td align="center" class="fooinfo">115</td>
+                            <td align="center" class="fooinfo">105</td>
+                            <td align="center" class="fooinfo">65</td>
+                            <td align="center" class="fooinfo">70</td>
+                            <td align="center" class="fooinfo">80</td>
+                            <td align="center" class="fooinfo">Lv. 1</td>
+                            <td align="center" class="fooinfo">Lv. 1</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#207</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/207.shtml"><img src="/pokearth/sprites/gold/207.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/207.shtml">Gligar</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/ground.shtml"><img src="/pokedex-bw/type/ground.gif" border="0"></a> <a href="/pokedex-gs/flying.shtml"><img src="/pokedex-bw/type/flying.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">65</td>
+                            <td align="center" class="fooinfo">75</td>
+                            <td align="center" class="fooinfo">105</td>
+                            <td align="center" class="fooinfo">35</td>
+                            <td align="center" class="fooinfo">65</td>
+                            <td align="center" class="fooinfo">85</td>
+                            <td align="center" class="fooinfo">Lv. 13</td>
+                            <td align="center" class="fooinfo">Lv. 13</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#208</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/208.shtml"><img src="/pokearth/sprites/gold/208.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/208.shtml">Steelix</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/steel.shtml"><img src="/pokedex-bw/type/steel.gif" border="0"></a> <a href="/pokedex-gs/ground.shtml"><img src="/pokedex-bw/type/ground.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">75</td>
+                            <td align="center" class="fooinfo">85</td>
+                            <td align="center" class="fooinfo">200</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">65</td>
+                            <td align="center" class="fooinfo">30</td>
+                            <td align="center" class="fooinfo">Lv. 23</td>
+                            <td align="center" class="fooinfo">Lv. 23</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#211</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/211.shtml"><img src="/pokearth/sprites/gold/211.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/211.shtml">Qwilfish</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/water.shtml"><img src="/pokedex-bw/type/water.gif" border="0"></a> <a href="/pokedex-gs/poison.shtml"><img src="/pokedex-bw/type/poison.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">65</td>
+                            <td align="center" class="fooinfo">95</td>
+                            <td align="center" class="fooinfo">75</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">85</td>
+                            <td align="center" class="fooinfo">Lv. 10</td>
+                            <td align="center" class="fooinfo">Lv. 10</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#218</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/218.shtml"><img src="/pokearth/sprites/gold/218.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/218.shtml">Slugma</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/fire.shtml"><img src="/pokedex-bw/type/fire.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">40</td>
+                            <td align="center" class="fooinfo">40</td>
+                            <td align="center" class="fooinfo">40</td>
+                            <td align="center" class="fooinfo">70</td>
+                            <td align="center" class="fooinfo">40</td>
+                            <td align="center" class="fooinfo">20</td>
+                            <td align="center" class="fooinfo">Lv. 22</td>
+                            <td align="center" class="fooinfo">Lv. 22</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#219</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/219.shtml"><img src="/pokearth/sprites/gold/219.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/219.shtml">Magcargo</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/fire.shtml"><img src="/pokedex-bw/type/fire.gif" border="0"></a> <a href="/pokedex-gs/rock.shtml"><img src="/pokedex-bw/type/rock.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">50</td>
+                            <td align="center" class="fooinfo">120</td>
+                            <td align="center" class="fooinfo">80</td>
+                            <td align="center" class="fooinfo">80</td>
+                            <td align="center" class="fooinfo">30</td>
+                            <td align="center" class="fooinfo">Lv. 22</td>
+                            <td align="center" class="fooinfo">Lv. 22</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#222</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/222.shtml"><img src="/pokearth/sprites/gold/222.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/222.shtml">Corsola</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/water.shtml"><img src="/pokedex-bw/type/water.gif" border="0"></a> <a href="/pokedex-gs/rock.shtml"><img src="/pokedex-bw/type/rock.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">55</td>
+                            <td align="center" class="fooinfo">85</td>
+                            <td align="center" class="fooinfo">65</td>
+                            <td align="center" class="fooinfo">85</td>
+                            <td align="center" class="fooinfo">35</td>
+                            <td align="center" class="fooinfo">Lv. 7</td>
+                            <td align="center" class="fooinfo">Lv. 7</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a name="egg"></a>Pokémon That Learn Harden By Breeding:<p>
+
+                </p><table class="dextable" align="center">
+                    <tbody>
+                        <tr>
+                            <td align="center" class="fooevo" rowspan="2">
+                                No.
+                            </td>
+                            <td align="center" width="32" class="fooevo" rowspan="2">
+                                Pic
+                            </td>
+                            <td align="center" class="fooevo" rowspan="2">
+                                Name
+                            </td>
+                            <td align="center" class="fooevo" rowspan="2">
+                                Type
+                            </td>
+                            <td align="center" class="fooevo" colspan="6" width="10%">
+                                Base Stats
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooevo">HP</td>
+                            <td align="center" class="fooevo">Att</td>
+                            <td align="center" class="fooevo">Def</td>
+                            <td align="center" class="fooevo">S.Att</td>
+                            <td align="center" class="fooevo">S.Def</td>
+                            <td align="center" class="fooevo">Spd</td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="fooinfo">#214</td>
+                            <td align="center" class="fooinfo"><table class="pkmn"><tbody><tr><td><a href="/pokedex-gs/214.shtml"><img src="/pokearth/sprites/gold/214.png" border="0" width="32"></a></td></tr></tbody></table></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/214.shtml">Heracross</a></td>
+                            <td align="center" class="fooinfo"><a href="/pokedex-gs/bug.shtml"><img src="/pokedex-bw/type/bug.gif" border="0"></a> <a href="/pokedex-gs/fighting.shtml"><img src="/pokedex-bw/type/fighting.gif" border="0"></a></td>
+
+                            <td align="center" class="fooinfo">80</td>
+                            <td align="center" class="fooinfo">125</td>
+                            <td align="center" class="fooinfo">75</td>
+                            <td align="center" class="fooinfo">40</td>
+                            <td align="center" class="fooinfo">95</td>
+
+                            <td align="center" class="fooinfo">85</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </main>
+        </div><!-- END #content -->
+
+
+        <aside id="rbar">
+
+            <a href="/potw-swsh/" class="navheader">Pokémon of the Week</a>
+            <div align="center">
+                <a href="/potw-swsh/319.shtml"><img src="/potw-swsh/319.jpg" alt="Pokémon of the Week" class="tbarpic"></a>
+            </div>
+
+            <div class="navheader">Next In Japan</div>
+            <div>
+                <div align="center"><img src="/anime/NextOn/1137.jpg" class="tbarpic"></div>
+                Episode 1137<br>
+                <b>Almost Pikachu Crisis</b><br>
+                <div align="center"><img src="/anime/NextOn/1137-i.jpg" class="tbarpic"></div>
+                Airdate: 04/12/2020<br>
+            </div>
+
+            <div class="navheader">Recently In USA</div>
+            <div>
+                <div align="center"><a href="/anime/epiguide/pokemon/1113.shtml"><img src="/1113.jpg" class="tbarpic"></a></div><a href="/anime/epiguide/pokemon/1113.shtml">
+                    Episode 1113<br>
+                    <b>A Little Rocket R &amp; R!</b><br>
+                    <img src="/anime/synopsis.gif">Synopsis
+                </a><br>
+                <a href="/anime/pictures/pokemon/1113.shtml"><img src="/anime/pictures.gif">Pictures</a><br>
+            </div>
+
+            <div class="navheader">Next In USA</div>
+            <div>
+                <div align="center"><a href="/anime/epiguide/pokemon/1114.shtml"><img src="/1114.jpg" class="tbarpic"></a></div><a href="/anime/epiguide/pokemon/1114.shtml">
+                    Episode 1114<br>
+                    <b>A Festival Reunion!</b><br>
+                    Airdate: 04/12/2020
+                </a><br>
+                <a href="/anime/epiguide/pokemon/1114.shtml"><img src="/anime/synopsis.gif">Synopsis</a><br>
+                <a href="/anime/pictures/pokemon/1114.shtml"><img src="/anime/pictures.gif">Pictures</a><br>
+            </div>
+
+            <div class="navheader">Social Media</div>
+            <div class="center">
+                <a href="http://www.facebook.com/SerebiiNetPage" target="blank"><img src="/Toolbar/headers/Facebook.png" width="30" alt="Facebook"></a>
+                <a href="http://www.twitter.com/SerebiiNet" target="blank"><img src="/Toolbar/headers/Twitter.png" width="30" alt="Twitter"></a>
+                <a href="http://www.youtube.com/serebiispp" target="blank"><img src="/Toolbar/headers/youtube.png" width="30" alt="YouTube"></a>
+                <a href="http://www.instagram.com/serebii" target="blank" rel="nofollow"><img src="/Toolbar/headers/instagram.png" width="30" alt="Instagram"></a>
+            </div>
+
+            <div class="navheader">In Association With</div>
+            <div class="center">
+                <a href="http://www.pocketmonsters.net/" target="blank" rel="nofollow"><img src="/Toolbar/pm.png" alt="#PM"></a><br>
+                <a href="http://www.legendarypokemon.net/" target="blank" rel="nofollow"><img src="/Toolbar/lpoke.png" alt="Legendary Pokémon"></a>
+            </div>
+
+        </aside>
+
+    </div><!-- END #wrapper -->
+    <footer id="footer">
+        <div class="copyright">
+            <a href="#top" alt="Top of Page" title="Top of Page" class="totop"></a>
+
+            All Content is © Copyright of Serebii.net 1999-2020. |
+            <a href="/privacy.shtml">Privacy Policy</a> |
+            <a class="nn-cmp-show" href="#">Manage Cookie Settings</a><br>
+            Pokémon and All Respective Names are Trademark &amp; © of Nintendo 1996-2020
+        </div>
+
+        <div style="height:102px">
+            <div id="nn_mobile_lb2"></div>
+            <div id="celtra-reveal-wrapper" style="position:fixed; height: auto; width: 100%">
+                <div id="nn_1by1" data-google-query-id="CKq215SVpu0CFQ6onwodiFAOag" style="display: none;"><div id="google_ads_iframe_/6928793/Serebii-1x1_0__container__" style="border: 0pt none; width: 1px; height: 1px;"></div></div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <div class="nn-sticky" id="nn_lb2_wrap"><div id="nn_lb2" data-google-query-id="CKy215SVpu0CFQ6onwodiFAOag"><div id="google_ads_iframe_/6928793/Serebii-LB2_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0" src="https://46728e95aed9c12fca02e47442ffcdf3.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/6928793/Serebii-LB2_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="1" height="1" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="3" style="border: 0px; vertical-align: bottom; width: 728px; height: 90px;" data-load-complete="true"></iframe></div><input type="checkbox" class="close-btn"></div></div>
+    <script type="text/javascript" src="https://mb.moatads.com/yi/v2?qn=%604%7BZEYwoqI%24%5BK%2BdLLU)%2CMm~tM!90vv9L%24%2FoDb%2Fz(lKm3GFlNUU%2Cu%5Bh_GcS%25%5BHvLU%5B4(K%2B%7BgeFWl_%3DNqUXR%3A%3D%2BAxMn%3Ch%2CyenA8p%2FHm%24%60%233P(ry5*ZRocMp1tq%5BN%7Bq%60RP%3CG.ceFW%7CoG%22mxT%3Bwv%40V374BKm55%3D%261fp%5BoU5tWhU*%3Ce%24%26j3G9jrwJe31k5X%5BG%5E%5B)%2C2iVSX%3C_Y%7B!7IQ3HbmUZzCFm%5Du!x29&amp;th=2469185324&amp;tf=nMzjG---CSa7H-XSSptC-j7VIQD-xFQTS-nMzjG-&amp;vi=111111&amp;rc=1%2C1%2C0%2C3%2CChrome%20PDF%20Plugin*Chrome%20PDF%20Viewer*Native%20Client%2C1%2C4%2C0%2Cprobably%2Cprobably&amp;os=&amp;qp=10000&amp;is=BBBBB2BBEYBvGl2BBCkqtUTBBRmsqbKW8BsrBu0rCFE48CRBeeBS2hWTMBBQeQBBn2soYggyUig0CBlWZ0uBBCCCCCCOgRBBiOfnE6Bkg7Oxib8MxOtJYHCBdm5kBhIcC9Y8oBXckXBR76iUUsJBCBBBBBBBBBWBSqj3BBBZeGV2BBBCMciUBBBjgEBBBBBB94UMgTdJMtEcpMBBBQBBBniOccBBBBBB47kNwxBbBBBBBBBBBhcjG6BBJM2L4Bk8BwCBQmIoRBBCzBz1BBCTClBBrbGBC4ehueB57NG9aJeRzBqEKiuwBBBB&amp;iv=8&amp;qt=0&amp;gz=0&amp;hh=0&amp;hn=0&amp;tw=null&amp;qc=1366&amp;qd=0&amp;qf=1920&amp;qe=937&amp;qh=1920&amp;qg=1040&amp;qm=300&amp;qa=1920&amp;qb=1080&amp;qi=1920&amp;qj=1040&amp;to=000&amp;po=1-0020002000002120&amp;vy=ot%24b%5Bh%40%22oDgO%3DLlE6%3Avy%2CUitwbYF%3EeRy6%3A0%3FeS%22%5Bby%3FapTR%23J%3B%2Bt.Nm!_vVM%24Y7%2561oA%3CuJ%3BO*zDRd%40IU%5B.%22%24b_o%3FtVD%5D%5BpN%7CQF%40Sy7%7BA&amp;qr=0&amp;url=https%3A%2F%2Fwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;pcode=networknheader13924283968&amp;callback=MoatNadoAllJsonpRequest_78943657"></script><iframe name="__bkframe" id="__bkframe" title="bk" src="about:blank" style="border: 0px; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px, 0px, 0px, 0px);"></iframe><img src="https://ad.doubleclick.net/favicon.ico?ad=300x250&amp;ad_box_=1&amp;adnet=1&amp;showad=1&amp;size=250x250" style="display: none !important;"><img src="https://ad-delivery.net/px.gif?ch=1&amp;e=0.09715384020015083" style="display: none !important;">
+    <script async="" type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.mgr.consensu.org/delivery/customcss/3810_9545_1.v93.js"></script>
+    <script async="" type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.mgr.consensu.org/delivery/customvendors/9545_1.js"></script>
+    <script async="" type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.mgr.consensu.org/delivery/customtexts/3810_6648.js"></script><iframe name="__bkframe_75152_1606598326504" id="__bkframe_75152_1606598326504" title="bk" src="https://stags.bluekai.com/site/75152?ret=html&amp;phint=tags1%3D%7Cpokemon%7Cnintendo%7C&amp;phint=tags2%3D%7Cpokemon%7Cnintendo%7C&amp;phint=tags3%3D%7Cpokemon%7Cnintendo%7C&amp;phint=url1%3Dwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;phint=url2%3Dwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;phint=url3%3Dwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;phint=path1%3D%2Fattackdex-gs%2Fharden.shtml&amp;phint=path2%3D%2Fattackdex-gs%2Fharden.shtml&amp;phint=path3%3D%2Fattackdex-gs%2Fharden.shtml&amp;phint=__bk_t%3DSerebii.net%20Generation%202%20AttackDex%20-%20Harden&amp;phint=__bk_k%3DPokemon%2C%20Moves%2C%20Attacks%2C%20AttackDex%2C%20MoveDex%2C%20Harden%2C%20%2C%20Normal%2C%20Gold%2C%20Silver&amp;phint=__bk_pr%3Dhttps%3A%2F%2Fwww.serebii.net%2Fattackdex-gs%2F&amp;phint=__bk_l%3Dhttps%3A%2F%2Fwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;phint=__bk_v%3D3.1.7&amp;limit=4&amp;r=3106340" class="__bkframe_site_75152" style="border: 0px; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px, 0px, 0px, 0px);"></iframe><div id="cmpbox" class="cmpbox cmpbox1" data-nosnippet="" style="display: none;"></div>
+    <style type="text/css">
+:root {
+	--cmpBgColor: #fff;
+	--cmpTextColor: #333;
+	--cmpLinkColor: #5f5f5f;
+	--cmpPurposesColor: #5f5f5f;
+	--cmpBrandColor: #f65002;
+	--cmpLogo: url('https://cmp.network-n.com/js/img/logo.svg');
+}
+
+*.cmpbox,
+*.cmpbox *,
+*.cmpbox > * {
+	transition: none !important;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+*.cmplogo,
+img.cmpimgyesno:not([id]) {
+	display: none !important;
+}
+
+.cmpboxinner {
+	max-width: 1100px;
+}
+
+.cmpboxbtn {
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1;
+	padding: 1em 1.8em !important;
+}
+
+
+
+.cmpboxcontent {
+	box-sizing: border-box;
+	margin-right: 0;
+}
+
+*.cmpbox {
+	border-top-color: var(--cmpBrandColor) !important;
+}
+
+*.cmpboxbtnyes,
+A.cmpboxbtnyes,
+A.cmpboxbtnyes:link,
+*.cmpboxbtnno,
+A.cmpboxbtnno,
+A.cmpboxbtnno:link,
+*.cmpboxbtncustom,
+A.cmpboxbtncustom,
+A.cmpboxbtncustom:link,
+*.cmpboxbtnsave,
+A.cmpboxbtnsave,
+A.cmpboxbtnsave:link {
+	background-color: var(--cmpBrandColor) !important;
+}
+
+*.cmpbox,
+.cmpfullscreen.cmpbox {
+	background-color: var(--cmpBgColor) !important;
+}
+
+.cmpwelcomeprps {
+	margin-right: 0;
+	padding-right: 15px;
+	width: 50%;
+}
+
+
+}
+
+.cmpwelcomeprpstxt,
+.cmpwelcomeprpstxt A:link,
+.cmpwelcomeprpsbtn,
+.cmpwelcomeprpsbtn A:link,
+.cmpwelcomeprpsbtn span {
+	color: var(--cmpPurposesColor) !important;
+}
+
+.cmpmorelink,
+A.cmpmorelink,
+A.cmpmorelink:link,
+.cmpcookietbl a {
+	color: var(--cmpLinkColor) !important;
+}
+
+*.cmpbox,
+*.cmpboxtxt,
+.cmpfullscreen *.cmpboxtxt,
+.cmpfullscreen,
+.cmpprpsdescr,
+td.cmpvendname,
+*.cmpboxhl,
+*.cmpprpshl {
+	color: var(--cmpTextColor) !important;
+}
+
+.cmpboxtxt,
+.cmpprpsdescr {
+	padding-right: 10px;
+}
+
+*.cmponofftext {
+	display: none !important;
+}
+
+th.cmpallprps,
+th.cmpallvend,
+td.cmpvendname {
+	padding: 3px 0;
+}
+th.cmpallprps,
+th.cmpallvend {
+	text-align: center;
+}
+
+
+*.cmptbl {
+	table-layout: auto;
+}
+*.cmptbl td {
+	white-space: unset;
+	overflow: unset;
+}
+
+.cmpboxccpadnslink {
+	color: var(--cmpBrandColor) !important;
+}
+
+span.cmpboxnaviitemtxt {
+	color: #222;
+}
+.cmpboxnaviitem {
+	background: white;
+}
+*.cmpboxnaviitemactive span {
+	font-weight: bold;
+}
+
+}
+
+*.cmplogo {right: 10px; top: 10px;} *.cmpboxhl{font-size:16px;color:#3B3B3B;padding-bottom:10px;font-weight:bold;} *.cmpboxtxt, td.cmpvendname{font-size:14px;color:#5F5F5F;}.cmpwelcomeprpstxt, .cmpwelcomeprpstxt A:link, .cmpwelcomeprpsbtn, .cmpwelcomeprpsbtn A:link, .cmpwelcomeprpsbtn span{font-size:14px;color:#5F5F5F;} *.cmpboxtxt{padding-bottom:20px;}.cmpwelcomeprpstxt, .cmpwelcomeprpstxt A:link, .cmpwelcomeprpsbtn, .cmpwelcomeprpsbtn A:link, .cmpwelcomeprpsbtn span{font-size:14px;color:#5F5F5F;}.cmpboxwelcomeprps{margin-bottom:20px;} .cmpmorelink, A.cmpmorelink, A.cmpmorelink:link{font-size:14px;color:#5F5F5F;} .cmpsavemychoice, .cmpsavemychoice label{font-size:14px;color:#5F5F5F;}  *.cmpboxbtnyes, A.cmpboxbtnyes, A.cmpboxbtnyes:link{font-size:14px;color:#FFFFFF;background-color:#F65002;} *.cmpboxbtnno, A.cmpboxbtnno, A.cmpboxbtnno:link, *.cmpboxbtncustom, A.cmpboxbtncustom, A.cmpboxbtncustom:link{font-size:14px;color:#FFFFFF;background-color:#F65002;} *.cmpboxbtnsave, A.cmpboxbtnsave, A.cmpboxbtnsave:link{font-size:14px;color:#FFFFFF;background-color:#F65002;} .cmpfullscreen *.cmpboxbtnyes, .cmpfullscreen A.cmpboxbtnyes, .cmpfullscreen A.cmpboxbtnyes:link{font-size:14px;color:#FFFFFF;background-color:#F65002;} .cmpfullscreen .cmpmorelink, .cmpfullscreen A.cmpmorelink, .cmpfullscreen A.cmpmorelink:link{font-size:14px;color:#5F5F5F;}  .cmpboxbtn{box-shadow:none; -webkit-box-shadow:none; -moz-box-shadow:none;} .cmpbox{box-shadow:none; -webkit-box-shadow:none; -moz-box-shadow:none;} .cmpboxbtn{width:240px;} .cmpfullscreen .cmpboxbtn{width:240px;} .cmpboxbtn{border-color:#FFFFFF;}*.cmpboxbtnyes svg{fill:#FFFFFF;width:14px;height:14px;}*.cmpboxbtnno svg{fill:#FFFFFF;width:14px;height:14px;} *.cmpboxbtnaccept *.cmpimg, *.cmpboxbtnaccept svg{display:none !important;} *.cmpboxbtnaccept{padding-left:0px;} *.cmpboxbtnreject *.cmpimg, *.cmpboxbtnreject svg{display:none !important;} *.cmpboxbtnreject{padding-left:0px;} *.cmpbox{background-color:#FFFFFF;border-top:solid 4px #F65002;border-right:solid 0px #FFFFFF;border-bottom:solid 0px #C0C0C0;border-left:solid 0px #FFFFFF;padding-top:20px;padding-right:20px;padding-bottom:10px;padding-left:20px;} *.cmpclose{display:none;}  .cmpfullscreen *.cmpboxhl{font-size:16px;color:#3B3B3B;font-weight:bold;} .cmpfullscreen *.cmpprpshl{font-size:16px;color:#3B3B3B;font-weight:bold;} .cmpfullscreen *.cmpboxtxt, .cmpfullscreen, .cmpprpsdescr, td.cmpvendname, .cmpfullscreen A.cmpvendurl, .cmpfullscreen A.cmpvendurl:link{font-size:14px;color:#5F5F5F;} .cmpfullscreen.cmpbox{background-color:#FFFFFF;} .cmpboxnaviitemactive, TD.cmpallvend, TH.cmpallvend, TD.cmpallprps, TH.cmpallprps{background-color:#FFFDE8;}.cmpbox.cmpfullscreen{overflow:auto;max-height:700px !important;max-width:700px !important; transform: translate(-50%, -50%) !important; left: 50%; top: 50%;}</style><iframe id="google_osd_static_frame_3408896991267" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><iframe sandbox="allow-scripts allow-same-origin" id="60169a28d90eca3" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://biddr.brealtime.com/check.html?gdpr=0&amp;gdpr_consent=">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="610edf1977ddb54" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eb2.3lift.com/sync?">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="6269db82e33d7ed" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://us-u.openx.net/w/1.0/pd?plm=6&amp;ph=765fac68-b57c-489c-8ec7-92aeec542751&amp;gdpr=0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="633335fea862ad4" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://ad-cdn.technoratimedia.com/html/usersync.html?src=prebid_prebid_4.6.0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="64db400b035cb46" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eus.rubiconproject.com/usync.html?gdpr=0&amp;gdpr_consent=">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="6525ad259bb1487" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://acdn.adnxs.com/dmp/async_usersync.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="66b6b53290b0c6e" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://js-sec.indexww.com/um/ixmatch.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="671aa0d51371177" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://ads.pubmatic.com/AdServer/js/showad.js#PIX&amp;kdntuid=1&amp;p=158684&amp;gdpr=0&amp;gdpr_consent=">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="68abe8600ffba3" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://ap.lijit.com/beacon?informer=13390049">
+    </iframe>
+</body>
