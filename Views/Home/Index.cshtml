@@ -14,7 +14,7 @@
             <th>PokeDex Number</th>
             <th>name</th>
             <th>Sprite</th>
-            <th>Img</th>
+            <th>Abilities</th>
         </tr>
         @foreach (var poke in pokelist)
         {
@@ -23,7 +23,7 @@
             <td><a class="nav-link text-dark" asp-area="" asp-controller="Poke" asp-action="Details" asp-route-id="@poke.id">@poke.id</a></td>
             <td><a class="nav-link text-dark" asp-area="" asp-controller="Poke" asp-action="Details" asp-route-id="@poke.id">@poke.name</a></td>
             <td><a class="nav-link text-dark" asp-area="" asp-controller="Poke" asp-action="Details" asp-route-id="@poke.id"><img src="@poke.sprites.front_default"></a></td>
-            <td>@poke.stats[0].base_stat</td>
+            <td>@foreach (var ability in @poke.abilities) { @ability.ability.name<br />} </td>
         </tr>
         }
     </table>
