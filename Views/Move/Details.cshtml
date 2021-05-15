@@ -5,10 +5,9 @@
     var move = ViewData["move"] as Moves;
 }
 
-<h1>View</h1>
+<h1>@move.name</h1>
 
 <div>
-    <div>@move.name</div>
     <div>@move.type.name</div>
     <div>@move.power</div>
     <div>@move.accuracy</div>
@@ -17,110 +16,6 @@
 
   
 </div>
-
-<body class="">
-    <iframe src="https://z.moatads.com/hd09824092/iframe.html#header=1" width="0" height="0" style="display: none; width: 0px; height: 0px;"></iframe>
-    <script type="text/javascript">
-	var viewport_meta = document.getElementById('viewport-meta');
-	var viewport_timer;
-
-	// these body*Class are reused in the lbar mobile menu
-	function bodyAddClass(className){
-		if(document.body) document.body.classList.add(className);
-	}
-	function bodyRemoveClass(className){
-		if(document.body) document.body.className = document.body.className.replace(className,"");
-	}
-
-	function viewport_set() {
-		// Define our viewport meta values
-		var viewports = {
-			default: viewport_meta.getAttribute('content'),
-			mobileL: 'width=device-width,initial-scale=0.75',
-			mobileM: 'width=device-width,initial-scale=0.5',
-			mobileS: 'width=device-width,initial-scale=0.4'
-		};
-
-		// Change the viewport value based on screen.width
-		if(screen.width < 370){
-			viewport_meta.setAttribute('content', viewports.mobileS);
-			bodyAddClass("nav_mobileS");
-			bodyRemoveClass("nav_mobileM");
-			bodyRemoveClass("nav_mobileL");
-		} else if(screen.width < 505){
-			viewport_meta.setAttribute('content', viewports.mobileM);
-			bodyRemoveClass("nav_mobileS");
-			bodyAddClass("nav_mobileM");
-			bodyRemoveClass("nav_mobileL");
-		} else if (screen.width < 760){
-			viewport_meta.setAttribute('content', viewports.mobileL);
-			bodyRemoveClass("nav_mobileS");
-			bodyRemoveClass("nav_mobileM");
-			bodyAddClass("nav_mobileL");
-		} else{
-			viewport_meta.setAttribute('content', viewports.default);
-			bodyRemoveClass("nav_mobileS");
-			bodyRemoveClass("nav_mobileM");
-			bodyRemoveClass("nav_mobileL");
-		}
-	}
-
-	// Set the correct viewport value on page load
-	viewport_set();
-
-	/* attach listener to (delay) set the correct viewport after device orientation change or resize. also onload so the nav_mobile* class gets added to body AFTER <body> has loaded */
-	if(window.addEventListener){
-		window.addEventListener('load', viewport_set);
-		window.addEventListener('resize', function(){
-			clearTimeout(viewport_timer);
-			viewport_timer = setTimeout(viewport_set, 100);
-		})
-	} else{
-		window.attachEvent('onload', viewport_set)
-		window.attachEvent('onresize', function(){
-			clearTimeout(viewport_timer);
-			viewport_timer = setTimeout(viewport_set, 100);
-		})
-	}
-
-    </script>
-
-
-    <header id="header">
-        <div class="banner">
-            <a href="/"><img src="/Banner.jpg" alt="Serebii.net Header" style="height:139px"></a>
-        </div>
-
-        <nav class="quicklinks">
-            <ul>
-                <li><b>Quick Links</b></li>
-                <li><a href="/index2.shtml">Home</a></li>
-                <li><a href="https://forums.serebii.net/" target="blank">Forums</a></li>
-                <li><a href="mailto:webmaster@serebii.net">Contact</a></li>
-                <li><a href="/discord.shtml">Discord</a></li>
-                <li><a href="/pokemon">Pokédex Hub</a></li>
-                <li><a href="/pokemongo/pokemon">GO Pokédex</a></li>
-                <li><a href="/pokedex-swsh">Sword &amp; Shield Pokédex</a></li>
-                <li><a href="/pokearth">Pokéarth</a></li>
-
-                <li class="search">
-                    <form id="searchbox_018410473690156091934:6gahkiyodbi" action="/search.shtml" style="margin:0px;">
-                        <input type="hidden" name="cx" value="018410473690156091934:6gahkiyodbi">
-                        <input type="hidden" name="cof" value="FORID:11">
-                        <input name="q" type="text" size="20" placeholder="Custom Search" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;">
-                        <input type="submit" name="sa" value="Search">
-                        <input name="siteurl" type="hidden" value="www.serebii.net/attackdex-gs/harden.shtml"><input name="ref" type="hidden" value="www.serebii.net/attackdex-gs/"><input name="ss" type="hidden" value="">
-                    </form>
-                    <script type="text/javascript" src="//www.google.com/coop/cse/brand?form=searchbox_018410473690156091934%3A6gahkiyodbi"></script>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <script src="https://consentmanager.mgr.consensu.org/delivery/cmp.php?id=9545&amp;h=https%3A%2F%2Fwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;&amp;__cmpfcc=1&amp;l=&amp;o=1606598326232" type="text/javascript" data-cmp-ab="1" async=""></script>
-    <script src="https://cdn.consentmanager.mgr.consensu.org/delivery/cmp_en.min.js" type="text/javascript" data-cmp-ab="1" async=""></script><iframe name="__cmpLocator" style="display: none;"></iframe><iframe name="__uspapiLocator" style="display: none;"></iframe><iframe name="__tcfapiLocator" style="display: none;"></iframe>
-
-
-
 
     <div id="wrapper">
 
@@ -144,80 +39,8 @@
 
         <script type="text/javascript">
 
-function loadMobileLbar(){
-	var tbar_lbar_open=document.getElementById('tbar_lbar_open'),
-		tbar_backdrop=document.getElementById('tbar_backdrop'),
-		lbar=document.getElementById('lbar'),
-		lbarLIs=document.querySelectorAll("#lbar_ul>li .navheader"),
-		lbarLIULs=document.querySelectorAll("#lbar_ul>li>ul");
-
-	/* lbar display/hide */
-	tbar_lbar_open.onclick=function() {
-		if (lbar.className.indexOf("show") > -1){//hide
-			lbar.className = lbar.className.replace("show","");
-			bodyRemoveClass("nav_modal");
-		} else{//show
-			lbar.classList.add("show");
-			bodyAddClass("nav_modal");
-		}
-
-		return false;
-	}
 
 
-	/* background clicked when bar shown */
-	tbar_backdrop.onclick=function() {// if the backdrop is clicked, hide menus
-		lbar.className = lbar.className.replace("show","");
-		rbar.className = rbar.className.replace("show","");
-		bodyRemoveClass("nav_modal");
-		return false;
-	}
-
-	/* handle expand/collapse sub-menus in lbar by attaching click events */
-	for(i=0; i<lbarLIs.length; i++){
-		lbarLIs[i].onclick=function(i) {
-			var elem=this.parentNode.getElementsByTagName("UL")[0];
-			var elemDisp=(elem.className.indexOf("show") === -1)
-
-			// hide all ul, then open one if clicked
-			for(i2=0; i2<lbarLIULs.length; i2++){
-				lbarLIULs[i2].className = lbarLIULs[i2].className.replace("show","");
-			}
-
-			if(elemDisp){
-				elem.classList.add("show");
-			}
-
-			return false;
-		}
-	}
-}
-function loadMobileRbar(){
-	var tbar_rbar_open=document.getElementById('tbar_rbar_open'),
-		rbar=document.getElementById('rbar');
-
-	/* rbar display/hide */
-	tbar_rbar_open.onclick=function() {
-		if (rbar.className.indexOf("show") > -1){//hide
-			rbar.className = rbar.className.replace("show","");
-			bodyRemoveClass("nav_modal");
-		} else{//show
-			rbar.classList.add("show");
-			bodyAddClass("nav_modal");
-		}
-
-		return false;
-	}
-}
-
-loadMobileLbar();
-
-/* attach listener to for rbar events AFTER page loads (because #rbar hasn't loaded at this point in page ) */
-if(window.addEventListener){
-	window.addEventListener('load', loadMobileRbar)
-} else{
-	window.attachEvent('onload', loadMobileRbar)
-}
         </script>
 
 
@@ -234,7 +57,7 @@ if(window.addEventListener){
                                 <b>@move.name</b>
                             </td>
                             <td class="fooevo" width="66%" colspan="2">
-                                <b>@move.type</b>
+                                <b>@move.type.name</b>
                             </td>
 
                         </tr>
@@ -266,17 +89,7 @@ if(window.addEventListener){
                                 <b>@move.accuracy</b>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="cen">
-                                30
-                            </td>
-                            <td class="cen">
-                                0
-                            </td>
-                            <td class="cen">
-                                100
-                            </td>
-                        </tr>
+        
                         <tr>
                             <td colspan="3" class="fooleft">Battle Effect:</td>
                         </tr>
@@ -317,7 +130,7 @@ if(window.addEventListener){
                             </td>
                         </tr>
                     </tbody>
-                </table><a name="level"></a>Pokémon That Learn @move By Level Up<table class="dextable" align="center">
+                </table><a name="level"></a>Pokémon That Learn @move.name By Level Up<table class="dextable" align="center">
                     <tbody>
                         <tr>
                             <td align="center" class="fooevo" rowspan="2">
@@ -772,168 +585,3 @@ if(window.addEventListener){
             </div>
         </div>
     </footer>
-
-
-
-
-
-    <div class="nn-sticky" id="nn_lb2_wrap"><div id="nn_lb2" data-google-query-id="CKy215SVpu0CFQ6onwodiFAOag"><div id="google_ads_iframe_/6928793/Serebii-LB2_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0" src="https://46728e95aed9c12fca02e47442ffcdf3.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html" id="google_ads_iframe_/6928793/Serebii-LB2_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="1" height="1" data-is-safeframe="true" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="3" style="border: 0px; vertical-align: bottom; width: 728px; height: 90px;" data-load-complete="true"></iframe></div><input type="checkbox" class="close-btn"></div></div>
-    <script type="text/javascript" src="https://mb.moatads.com/yi/v2?qn=%604%7BZEYwoqI%24%5BK%2BdLLU)%2CMm~tM!90vv9L%24%2FoDb%2Fz(lKm3GFlNUU%2Cu%5Bh_GcS%25%5BHvLU%5B4(K%2B%7BgeFWl_%3DNqUXR%3A%3D%2BAxMn%3Ch%2CyenA8p%2FHm%24%60%233P(ry5*ZRocMp1tq%5BN%7Bq%60RP%3CG.ceFW%7CoG%22mxT%3Bwv%40V374BKm55%3D%261fp%5BoU5tWhU*%3Ce%24%26j3G9jrwJe31k5X%5BG%5E%5B)%2C2iVSX%3C_Y%7B!7IQ3HbmUZzCFm%5Du!x29&amp;th=2469185324&amp;tf=nMzjG---CSa7H-XSSptC-j7VIQD-xFQTS-nMzjG-&amp;vi=111111&amp;rc=1%2C1%2C0%2C3%2CChrome%20PDF%20Plugin*Chrome%20PDF%20Viewer*Native%20Client%2C1%2C4%2C0%2Cprobably%2Cprobably&amp;os=&amp;qp=10000&amp;is=BBBBB2BBEYBvGl2BBCkqtUTBBRmsqbKW8BsrBu0rCFE48CRBeeBS2hWTMBBQeQBBn2soYggyUig0CBlWZ0uBBCCCCCCOgRBBiOfnE6Bkg7Oxib8MxOtJYHCBdm5kBhIcC9Y8oBXckXBR76iUUsJBCBBBBBBBBBWBSqj3BBBZeGV2BBBCMciUBBBjgEBBBBBB94UMgTdJMtEcpMBBBQBBBniOccBBBBBB47kNwxBbBBBBBBBBBhcjG6BBJM2L4Bk8BwCBQmIoRBBCzBz1BBCTClBBrbGBC4ehueB57NG9aJeRzBqEKiuwBBBB&amp;iv=8&amp;qt=0&amp;gz=0&amp;hh=0&amp;hn=0&amp;tw=null&amp;qc=1366&amp;qd=0&amp;qf=1920&amp;qe=937&amp;qh=1920&amp;qg=1040&amp;qm=300&amp;qa=1920&amp;qb=1080&amp;qi=1920&amp;qj=1040&amp;to=000&amp;po=1-0020002000002120&amp;vy=ot%24b%5Bh%40%22oDgO%3DLlE6%3Avy%2CUitwbYF%3EeRy6%3A0%3FeS%22%5Bby%3FapTR%23J%3B%2Bt.Nm!_vVM%24Y7%2561oA%3CuJ%3BO*zDRd%40IU%5B.%22%24b_o%3FtVD%5D%5BpN%7CQF%40Sy7%7BA&amp;qr=0&amp;url=https%3A%2F%2Fwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;pcode=networknheader13924283968&amp;callback=MoatNadoAllJsonpRequest_78943657"></script><iframe name="__bkframe" id="__bkframe" title="bk" src="about:blank" style="border: 0px; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px, 0px, 0px, 0px);"></iframe><img src="https://ad.doubleclick.net/favicon.ico?ad=300x250&amp;ad_box_=1&amp;adnet=1&amp;showad=1&amp;size=250x250" style="display: none !important;"><img src="https://ad-delivery.net/px.gif?ch=1&amp;e=0.09715384020015083" style="display: none !important;">
-    <script async="" type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.mgr.consensu.org/delivery/customcss/3810_9545_1.v93.js"></script>
-    <script async="" type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.mgr.consensu.org/delivery/customvendors/9545_1.js"></script>
-    <script async="" type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.mgr.consensu.org/delivery/customtexts/3810_6648.js"></script><iframe name="__bkframe_75152_1606598326504" id="__bkframe_75152_1606598326504" title="bk" src="https://stags.bluekai.com/site/75152?ret=html&amp;phint=tags1%3D%7Cpokemon%7Cnintendo%7C&amp;phint=tags2%3D%7Cpokemon%7Cnintendo%7C&amp;phint=tags3%3D%7Cpokemon%7Cnintendo%7C&amp;phint=url1%3Dwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;phint=url2%3Dwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;phint=url3%3Dwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;phint=path1%3D%2Fattackdex-gs%2Fharden.shtml&amp;phint=path2%3D%2Fattackdex-gs%2Fharden.shtml&amp;phint=path3%3D%2Fattackdex-gs%2Fharden.shtml&amp;phint=__bk_t%3DSerebii.net%20Generation%202%20AttackDex%20-%20Harden&amp;phint=__bk_k%3DPokemon%2C%20Moves%2C%20Attacks%2C%20AttackDex%2C%20MoveDex%2C%20Harden%2C%20%2C%20Normal%2C%20Gold%2C%20Silver&amp;phint=__bk_pr%3Dhttps%3A%2F%2Fwww.serebii.net%2Fattackdex-gs%2F&amp;phint=__bk_l%3Dhttps%3A%2F%2Fwww.serebii.net%2Fattackdex-gs%2Fharden.shtml&amp;phint=__bk_v%3D3.1.7&amp;limit=4&amp;r=3106340" class="__bkframe_site_75152" style="border: 0px; width: 0px; height: 0px; display: none; position: absolute; clip: rect(0px, 0px, 0px, 0px);"></iframe><div id="cmpbox" class="cmpbox cmpbox1" data-nosnippet="" style="display: none;"></div>
-    <style type="text/css">
-:root {
-	--cmpBgColor: #fff;
-	--cmpTextColor: #333;
-	--cmpLinkColor: #5f5f5f;
-	--cmpPurposesColor: #5f5f5f;
-	--cmpBrandColor: #f65002;
-	--cmpLogo: url('https://cmp.network-n.com/js/img/logo.svg');
-}
-
-*.cmpbox,
-*.cmpbox *,
-*.cmpbox > * {
-	transition: none !important;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
-
-*.cmplogo,
-img.cmpimgyesno:not([id]) {
-	display: none !important;
-}
-
-.cmpboxinner {
-	max-width: 1100px;
-}
-
-.cmpboxbtn {
-	text-transform: uppercase;
-	font-weight: bold;
-	line-height: 1;
-	padding: 1em 1.8em !important;
-}
-
-
-
-.cmpboxcontent {
-	box-sizing: border-box;
-	margin-right: 0;
-}
-
-*.cmpbox {
-	border-top-color: var(--cmpBrandColor) !important;
-}
-
-*.cmpboxbtnyes,
-A.cmpboxbtnyes,
-A.cmpboxbtnyes:link,
-*.cmpboxbtnno,
-A.cmpboxbtnno,
-A.cmpboxbtnno:link,
-*.cmpboxbtncustom,
-A.cmpboxbtncustom,
-A.cmpboxbtncustom:link,
-*.cmpboxbtnsave,
-A.cmpboxbtnsave,
-A.cmpboxbtnsave:link {
-	background-color: var(--cmpBrandColor) !important;
-}
-
-*.cmpbox,
-.cmpfullscreen.cmpbox {
-	background-color: var(--cmpBgColor) !important;
-}
-
-.cmpwelcomeprps {
-	margin-right: 0;
-	padding-right: 15px;
-	width: 50%;
-}
-
-
-
-
-.cmpwelcomeprpstxt,
-.cmpwelcomeprpstxt A:link,
-.cmpwelcomeprpsbtn,
-.cmpwelcomeprpsbtn A:link,
-.cmpwelcomeprpsbtn span {
-	color: var(--cmpPurposesColor) !important;
-}
-
-.cmpmorelink,
-A.cmpmorelink,
-A.cmpmorelink:link,
-.cmpcookietbl a {
-	color: var(--cmpLinkColor) !important;
-}
-
-*.cmpbox,
-*.cmpboxtxt,
-.cmpfullscreen *.cmpboxtxt,
-.cmpfullscreen,
-.cmpprpsdescr,
-td.cmpvendname,
-*.cmpboxhl,
-*.cmpprpshl {
-	color: var(--cmpTextColor) !important;
-}
-
-.cmpboxtxt,
-.cmpprpsdescr {
-	padding-right: 10px;
-}
-
-*.cmponofftext {
-	display: none !important;
-}
-
-th.cmpallprps,
-th.cmpallvend,
-td.cmpvendname {
-	padding: 3px 0;
-}
-th.cmpallprps,
-th.cmpallvend {
-	text-align: center;
-}
-
-
-*.cmptbl {
-	table-layout: auto;
-}
-*.cmptbl td {
-	white-space: unset;
-	overflow: unset;
-}
-
-.cmpboxccpadnslink {
-	color: var(--cmpBrandColor) !important;
-}
-
-span.cmpboxnaviitemtxt {
-	color: #222;
-}
-.cmpboxnaviitem {
-	background: white;
-}
-*.cmpboxnaviitemactive span {
-	font-weight: bold;
-}
-
-
-
-*.cmplogo {right: 10px; top: 10px;} *.cmpboxhl{font-size:16px;color:#3B3B3B;padding-bottom:10px;font-weight:bold;} *.cmpboxtxt, td.cmpvendname{font-size:14px;color:#5F5F5F;}.cmpwelcomeprpstxt, .cmpwelcomeprpstxt A:link, .cmpwelcomeprpsbtn, .cmpwelcomeprpsbtn A:link, .cmpwelcomeprpsbtn span{font-size:14px;color:#5F5F5F;} *.cmpboxtxt{padding-bottom:20px;}.cmpwelcomeprpstxt, .cmpwelcomeprpstxt A:link, .cmpwelcomeprpsbtn, .cmpwelcomeprpsbtn A:link, .cmpwelcomeprpsbtn span{font-size:14px;color:#5F5F5F;}.cmpboxwelcomeprps{margin-bottom:20px;} .cmpmorelink, A.cmpmorelink, A.cmpmorelink:link{font-size:14px;color:#5F5F5F;} .cmpsavemychoice, .cmpsavemychoice label{font-size:14px;color:#5F5F5F;}  *.cmpboxbtnyes, A.cmpboxbtnyes, A.cmpboxbtnyes:link{font-size:14px;color:#FFFFFF;background-color:#F65002;} *.cmpboxbtnno, A.cmpboxbtnno, A.cmpboxbtnno:link, *.cmpboxbtncustom, A.cmpboxbtncustom, A.cmpboxbtncustom:link{font-size:14px;color:#FFFFFF;background-color:#F65002;} *.cmpboxbtnsave, A.cmpboxbtnsave, A.cmpboxbtnsave:link{font-size:14px;color:#FFFFFF;background-color:#F65002;} .cmpfullscreen *.cmpboxbtnyes, .cmpfullscreen A.cmpboxbtnyes, .cmpfullscreen A.cmpboxbtnyes:link{font-size:14px;color:#FFFFFF;background-color:#F65002;} .cmpfullscreen .cmpmorelink, .cmpfullscreen A.cmpmorelink, .cmpfullscreen A.cmpmorelink:link{font-size:14px;color:#5F5F5F;}  .cmpboxbtn{box-shadow:none; -webkit-box-shadow:none; -moz-box-shadow:none;} .cmpbox{box-shadow:none; -webkit-box-shadow:none; -moz-box-shadow:none;} .cmpboxbtn{width:240px;} .cmpfullscreen .cmpboxbtn{width:240px;} .cmpboxbtn{border-color:#FFFFFF;}*.cmpboxbtnyes svg{fill:#FFFFFF;width:14px;height:14px;}*.cmpboxbtnno svg{fill:#FFFFFF;width:14px;height:14px;} *.cmpboxbtnaccept *.cmpimg, *.cmpboxbtnaccept svg{display:none !important;} *.cmpboxbtnaccept{padding-left:0px;} *.cmpboxbtnreject *.cmpimg, *.cmpboxbtnreject svg{display:none !important;} *.cmpboxbtnreject{padding-left:0px;} *.cmpbox{background-color:#FFFFFF;border-top:solid 4px #F65002;border-right:solid 0px #FFFFFF;border-bottom:solid 0px #C0C0C0;border-left:solid 0px #FFFFFF;padding-top:20px;padding-right:20px;padding-bottom:10px;padding-left:20px;} *.cmpclose{display:none;}  .cmpfullscreen *.cmpboxhl{font-size:16px;color:#3B3B3B;font-weight:bold;} .cmpfullscreen *.cmpprpshl{font-size:16px;color:#3B3B3B;font-weight:bold;} .cmpfullscreen *.cmpboxtxt, .cmpfullscreen, .cmpprpsdescr, td.cmpvendname, .cmpfullscreen A.cmpvendurl, .cmpfullscreen A.cmpvendurl:link{font-size:14px;color:#5F5F5F;} .cmpfullscreen.cmpbox{background-color:#FFFFFF;} .cmpboxnaviitemactive, TD.cmpallvend, TH.cmpallvend, TD.cmpallprps, TH.cmpallprps{background-color:#FFFDE8;}.cmpbox.cmpfullscreen{overflow:auto;max-height:700px !important;max-width:700px !important; transform: translate(-50%, -50%) !important; left: 50%; top: 50%;}</style><iframe id="google_osd_static_frame_3408896991267" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><iframe sandbox="allow-scripts allow-same-origin" id="60169a28d90eca3" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://biddr.brealtime.com/check.html?gdpr=0&amp;gdpr_consent=">
-    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="610edf1977ddb54" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eb2.3lift.com/sync?">
-    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="6269db82e33d7ed" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://us-u.openx.net/w/1.0/pd?plm=6&amp;ph=765fac68-b57c-489c-8ec7-92aeec542751&amp;gdpr=0">
-    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="633335fea862ad4" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://ad-cdn.technoratimedia.com/html/usersync.html?src=prebid_prebid_4.6.0">
-    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="64db400b035cb46" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eus.rubiconproject.com/usync.html?gdpr=0&amp;gdpr_consent=">
-    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="6525ad259bb1487" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://acdn.adnxs.com/dmp/async_usersync.html">
-    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="66b6b53290b0c6e" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://js-sec.indexww.com/um/ixmatch.html">
-    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="671aa0d51371177" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://ads.pubmatic.com/AdServer/js/showad.js#PIX&amp;kdntuid=1&amp;p=158684&amp;gdpr=0&amp;gdpr_consent=">
-    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="68abe8600ffba3" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://ap.lijit.com/beacon?informer=13390049">
-    </iframe>
-</body>
